@@ -491,7 +491,7 @@ export default function Home() {
                   <span style={{
                     color: "rgba(255,255,255,0.4)", fontWeight: 600,
                     display: "block", fontSize: "0.5em", marginBottom: "4px"
-                  }}>Hi, I'm</span>
+                  }}>Hi, My Name is</span>
                   <span style={{ color: activeColor, transition: "color 0.6s ease" }}>Junaid Sahil</span>
                 </h1>
 
