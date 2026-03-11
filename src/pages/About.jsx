@@ -184,7 +184,7 @@ export default function About() {
                         </div>
                         {/* PDF iframe */}
                         <iframe
-                            src={`${import.meta.env.VITE_API_URL}/resume/view`}
+                            src={`https://docs.google.com/viewer?url=${import.meta.env.VITE_API_URL}/resume/view&embedded=true`}
                             style={{ flex: 1, width: "100%", border: "none", background: "#fff" }}
                             title="Resume"
                         />

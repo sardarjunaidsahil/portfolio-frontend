@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop, { ScrollReset } from "@/components/ScrollToTop";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Projects from "@/pages/Projects";
@@ -18,6 +18,8 @@ function AppInner({ loaded }) {
             opacity: loaded ? 1 : 0,
             transition: "opacity 0.4s ease",
         }}>
+
+            <ScrollReset />
             <Navbar />
             <main style={{ minHeight: "100vh", background: "#08080C" }}>
                 <Routes>
