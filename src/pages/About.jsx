@@ -168,7 +168,7 @@ export default function About() {
                                 }}>Junaid_Sahil_Resume.pdf</span>
                             </div>
                             <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                                <a href="http://localhost:5000/api/resume/download" style={{
+                                <a href="${import.meta.env.VITE_API_URL}/resume/download" style={{
                                     padding: "6px 16px", fontSize: "0.75rem", fontWeight: 600,
                                     fontFamily: "'Outfit',sans-serif", background: "#63FFB4", color: "#08080C",
                                     borderRadius: "4px", textDecoration: "none",
@@ -184,7 +184,7 @@ export default function About() {
                         </div>
                         {/* PDF iframe */}
                         <iframe
-                            src="http://localhost:5000/api/resume/view"
+                            src="${import.meta.env.VITE_API_URL}/resume/view"
                             style={{ flex: 1, width: "100%", border: "none", background: "#fff" }}
                             title="Resume"
                         />
@@ -275,7 +275,7 @@ export default function About() {
                                             onMouseLeave={e => { e.target.style.background = "#63FFB4"; e.target.style.color = "#08080C"; }}
                                         >View Projects</Link>
 
-                                        <a href="http://localhost:5000/api/resume/download" style={{
+                                        <a href="${import.meta.env.VITE_API_URL}/resume/download" style={{
                                             padding: "10px 0", fontSize: "0.78rem", fontWeight: 600,
                                             fontFamily: "'Outfit',sans-serif", background: "transparent", color: "#63FFB4",
                                             border: "1px solid rgba(99,255,180,0.3)", textDecoration: "none",
