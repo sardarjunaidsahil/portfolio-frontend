@@ -418,7 +418,7 @@ export default function Home() {
                 }}>Junaid_Sahil_Resume.pdf</span>
               </div>
               <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <a href="${import.meta.env.VITE_API_URL}/resume/download" style={{
+                <a href={`${import.meta.env.VITE_API_URL}/resume/download`} style={{
                   padding: "6px 16px", fontSize: "0.75rem", fontWeight: 600,
                   fontFamily: "'Outfit',sans-serif", background: "#63FFB4", color: "#08080C",
                   borderRadius: "4px", textDecoration: "none",
@@ -433,7 +433,7 @@ export default function Home() {
               </div>
             </div>
             <iframe
-              src="${import.meta.env.VITE_API_URL}/resume/view"
+              src={`${import.meta.env.VITE_API_URL}/resume/view`}
               style={{ flex: 1, width: "100%", border: "none", background: "#fff" }}
               title="Resume"
             />
