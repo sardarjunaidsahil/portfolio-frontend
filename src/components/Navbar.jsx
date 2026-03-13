@@ -273,7 +273,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="nb-logo">
             <span className="nb-logo-bracket">&lt;</span>
-            <span className="nb-logo-text">Sardar Junaid Sahil</span>
+            <span className="nb-logo-text">&lt;SardarJunaidSahil/&gt;</span>
             <span className="nb-logo-space"> </span>
             <span className="nb-logo-bracket">/&gt;</span>
           </Link>
