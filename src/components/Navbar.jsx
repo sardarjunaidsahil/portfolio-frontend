@@ -260,7 +260,11 @@ export default function Navbar() {
             );
           })}
         </ul>
-        <Link to="/contact" className="nb-mobile-hire" onClick={() => setMenuOpen(false)}>
+        <Link
+          to="/contact"
+          className="nb-mobile-hire"
+          onClick={() => setMenuOpen(false)}
+        >
           Hire Me
         </Link>
       </div>
@@ -268,11 +272,10 @@ export default function Navbar() {
       {/* Navbar */}
       <nav className={`nb-root${scrolled ? " scrolled" : " top"}`}>
         <div className="nb-inner">
-
           {/* Logo */}
           <Link to="/" className="nb-logo">
             <span className="nb-logo-bracket">&lt;</span>
-            <span className="nb-logo-text">JunAid</span>
+            <span className="nb-logo-text">SʌɾԃAɾ JυnAιԃ SAhιɭ</span>
             <span className="nb-logo-space"> </span>
             <span className="nb-logo-bracket">/&gt;</span>
           </Link>
