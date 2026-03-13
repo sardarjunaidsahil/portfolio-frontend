@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Dancing+Script:wght@700&display=swap');
 
         .nb-root {
           position: fixed; top: 0; left: 0; right: 0;
@@ -62,17 +62,15 @@ export default function Navbar() {
           text-decoration: none;
         }
         .nb-logo-bracket {
-          font-family: 'JetBrains Mono', monospace;
-          font-size: 1.3rem; font-weight: 700;
-          color: ${GREEN}; opacity: 0.7;
-          transition: opacity 0.2s;
+          display: none;
         }
         .nb-logo:hover .nb-logo-bracket { opacity: 1; }
         .nb-logo-text {
-          font-family: 'Outfit', sans-serif;
-          font-size: 1.25rem; font-weight: 800;
-          color: #fff; letter-spacing: -0.02em;
+          font-family: 'Dancing Script', cursive;
+          font-size: 1.5rem; font-weight: 700;
+          color: #63FFB4; letter-spacing: 0.02em;
           transition: color 0.2s;
+          text-shadow: 0 0 20px rgba(99,255,180,0.4);
         }
         .nb-logo:hover .nb-logo-text { color: ${GREEN}; }
         .nb-logo-dot {
