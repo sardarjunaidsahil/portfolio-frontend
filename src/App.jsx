@@ -14,25 +14,26 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 function AppInner({ loaded }) {
     useAnalytics();
     return (
-        <div style={{
-            opacity: loaded ? 1 : 0,
-            transition: "opacity 0.4s ease",
-        }}>
-
-            <ScrollReset />
-            <Navbar />
-            <main style={{ minHeight: "100vh", background: "#08080C" }}>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/skills" element={<Skills />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
-            </main>
-            <Footer />
-            <ScrollToTop />
-        </div>
+      <div
+        style={{
+          opacity: loaded ? 1 : 0,
+          transition: "opacity 0.4s ease",
+        }}
+      >
+        <ScrollReset />
+        <Navbar />
+        <main style={{ minHeight: "100vh", background: "#08080C" }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+        <ScrollToTop />
+      </div>
     );
 }
 

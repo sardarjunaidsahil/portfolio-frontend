@@ -271,10 +271,10 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="nb-logo">
-            <span className="nb-logo-bracket">[</span>
-            <span className="nb-logo-text">dev</span>
-            <span className="nb-logo-dot" />
-            <span className="nb-logo-bracket">]</span>
+            <span className="nb-logo-bracket">&lt;</span>
+            <span className="nb-logo-text">JunAid</span>
+            <span className="nb-logo-space"> </span>
+            <span className="nb-logo-bracket">/&gt;</span>
           </Link>
 
           {/* Desktop links */}
