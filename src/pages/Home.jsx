@@ -409,7 +409,7 @@ export default function Home() {
   const [statsRef, statsVisible] = useReveal(0.3);
 
   useEffect(() => {
-    document.body.style.overflow = "hidden";
+    if (window.innerWidth > 900) document.body.style.overflow = "hidden";
     const onWheel = (e) => {
       if (!locked.current) return;
       targetRot.current += Math.min(Math.abs(e.deltaY) * 1.8, 360);
@@ -436,7 +436,7 @@ export default function Home() {
       window._ty = e.touches[0].clientY;
     };
     const onTouchMove = (e) => {
-      if (!locked.current) return;
+      if (!locked.current || window.innerWidth <= 900) return;
       const delta = (window._ty || 0) - e.touches[0].clientY;
       if (delta > 5) {
         window._ty = e.touches[0].clientY;
@@ -456,7 +456,7 @@ export default function Home() {
         locked.current = true;
         targetRot.current = 0;
         currentRot.current = 0;
-        document.body.style.overflow = "hidden";
+        if (window.innerWidth > 900) document.body.style.overflow = "hidden";
         if (cardRef.current) cardRef.current.style.transform = "rotateY(0deg)";
       }
     };
@@ -537,6 +537,7 @@ export default function Home() {
         .social-link:hover { color:#63FFB4 !important; }
 
         @media(max-width:900px){
+          section { padding: 2.5rem 0 !important; }
           .hero-grid      { grid-template-columns:1fr !important; }
           .flip-card      { display:none !important; }
           .mobile-profile { display:block !important; }
@@ -1636,7 +1637,7 @@ export default function Home() {
             overflow: "hidden",
             borderTop: "1px solid rgba(99,255,180,0.08)",
             background: "#0a0a12",
-            padding: "6rem 0",
+            padding: "4rem 0",
           }}
         >
           <div
