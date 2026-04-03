@@ -803,7 +803,7 @@ export default function Home() {
                       transition: "color 0.6s ease",
                     }}
                   >
-                    Junaid Sahil
+                    Muhammad Junaid
                   </span>
                 </h1>
 
@@ -936,7 +936,7 @@ export default function Home() {
                           marginBottom: "2px",
                         }}
                       >
-                        Junaid Sahil
+                        Muhammad Junaid
                       </div>
                       <div
                         style={{
@@ -1218,7 +1218,7 @@ export default function Home() {
                             <span style={{ color: "#63FFB4" }}>name</span>
                             <span style={{ color: "#e8eaf0" }}>:</span>{" "}
                             <span style={{ color: "#ffab70" }}>
-                              'Junaid Sahil'
+                              'Muhammad Junaid'
                             </span>
                             <span style={{ color: "#e8eaf0" }}>,</span>
                           </div>
@@ -1360,7 +1360,7 @@ export default function Home() {
                           >
                             <img
                               src="/your-photo.jpg"
-                              alt="Junaid Sahil"
+                              alt="Muhammad Junaid"
                               style={{
                                 width: "100%",
                                 height: "100%",
@@ -1406,7 +1406,7 @@ export default function Home() {
                               fontFamily: "'Outfit',sans-serif",
                             }}
                           >
-                            Junaid Sahil
+                            Muhammad Junaid
                           </span>
                           <span
                             style={{
