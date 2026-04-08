@@ -545,6 +545,7 @@ export default function Home() {
           .proj-grid      { grid-template-columns:1fr !important; }
         }
         @media(max-width:600px){
+          .h-btns a, .h-btns button { font-size:0.68rem !important; padding:8px 0 !important; }
           .hero-section   { min-height:unset !important; padding-top:64px !important; padding-bottom:0 !important; }
           .hero-grid      { padding:1rem 0 0 !important; gap:0 !important; }
           .h-badge        { margin-bottom:0.6rem !important; }
@@ -1022,7 +1023,7 @@ export default function Home() {
                   className="h-btns"
                   style={{
                     display: "flex",
-                    flexWrap: "nowrap",
+                    flexWrap: "wrap",
                     gap: "8px",
                     marginTop: "2rem",
                   }}
@@ -1120,7 +1121,7 @@ export default function Home() {
                       label: "LinkedIn",
                       href: "https://linkedin.com/in/sardarjunaidsahil",
                     },
-                    { label: "Resume", href: "/resume.pdf" },
+                    { label: "Resume", href: `${import.meta.env.VITE_API_URL}/resume/download` },
                   ].map(({ label, href }) => (
                     <a
                       key={label}
