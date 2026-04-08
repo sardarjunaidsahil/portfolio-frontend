@@ -138,58 +138,130 @@ export default function About() {
 
             {/* ── CV Modal ── */}
             {showCV && (
-                <div onClick={() => setShowCV(false)} style={{
-                    position: "fixed", inset: 0, zIndex: 99999,
-                    background: "rgba(0,0,0,0.85)", backdropFilter: "blur(8px)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    padding: "1rem",
-                }}>
-                    <div onClick={e => e.stopPropagation()} style={{
-                        width: "min(860px, 95vw)", height: "90vh",
-                        background: "#0D0D16", borderRadius: "10px",
-                        border: "1px solid rgba(99,255,180,0.2)",
-                        boxShadow: "0 30px 80px rgba(0,0,0,0.6)",
-                        display: "flex", flexDirection: "column", overflow: "hidden",
-                    }}>
-                        {/* Modal Header */}
-                        <div style={{
-                            padding: "1rem 1.5rem",
-                            background: "rgba(255,255,255,0.02)",
-                            borderBottom: "1px solid rgba(99,255,180,0.08)",
-                            display: "flex", alignItems: "center", justifyContent: "space-between",
-                        }}>
-                            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                                {["#ff5f57", "#febc2e", "#28c840"].map(c => (
-                                    <span key={c} style={{ width: "10px", height: "10px", borderRadius: "50%", background: c }} />
-                                ))}
-                                <span style={{
-                                    marginLeft: "8px", fontFamily: "'JetBrains Mono',monospace",
-                                    fontSize: "0.62rem", color: "#4a5568"
-                                }}>Junaid_Sahil_Resume.pdf</span>
-                            </div>
-                            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                                <a href={`${import.meta.env.VITE_API_URL}/resume/download`} style={{
-                                    padding: "6px 16px", fontSize: "0.75rem", fontWeight: 600,
-                                    fontFamily: "'Outfit',sans-serif", background: "#63FFB4", color: "#08080C",
-                                    borderRadius: "4px", textDecoration: "none",
-                                }}>⬇ Download</a>
-                                <button onClick={() => setShowCV(false)} style={{
-                                    background: "rgba(255,255,255,0.05)",
-                                    border: "1px solid rgba(255,255,255,0.1)",
-                                    color: "#8892a4", width: "30px", height: "30px",
-                                    borderRadius: "6px", cursor: "pointer", fontSize: "1rem",
-                                    display: "flex", alignItems: "center", justifyContent: "center",
-                                }}>✕</button>
-                            </div>
-                        </div>
-                        {/* PDF iframe */}
-                        <iframe
-                            src={`https://docs.google.com/viewer?url=${import.meta.env.VITE_API_URL}/resume/view&embedded=true`}
-                            style={{ flex: 1, width: "100%", border: "none", background: "#fff" }}
-                            title="Resume"
-                        />
-                    </div>
-                </div>
+               <div
+  onClick={() => setShowCV(false)}
+  style={{
+    position: "fixed",
+    inset: 0,
+    zIndex: 99999,
+    background: "rgba(0,0,0,0.85)",
+    backdropFilter: "blur(8px)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "0.5rem",
+  }}
+>
+  <div
+    onClick={(e) => e.stopPropagation()}
+    style={{
+      width: "min(860px, 98vw)",
+      height: "95vh",
+      background: "#0D0D16",
+      borderRadius: "10px",
+      border: "1px solid rgba(99,255,180,0.2)",
+      boxShadow: "0 30px 80px rgba(0,0,0,0.6)",
+      display: "flex",
+      flexDirection: "column",
+      overflow: "hidden",
+    }}
+  >
+    {/* Header */}
+    <div
+      style={{
+        padding: "0.6rem 0.8rem",
+        background: "rgba(255,255,255,0.02)",
+        borderBottom: "1px solid rgba(99,255,180,0.08)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        flexWrap: "nowrap",
+        gap: "8px",
+        minHeight: "44px",
+      }}
+    >
+      {/* Left — dots + filename */}
+      <div style={{ display: "flex", alignItems: "center", gap: "5px", minWidth: 0 }}>
+        {["#ff5f57", "#febc2e", "#28c840"].map((c) => (
+          <span
+            key={c}
+            style={{
+              width: "8px",
+              height: "8px",
+              borderRadius: "50%",
+              background: c,
+              flexShrink: 0,
+            }}
+          />
+        ))}
+        <span
+          style={{
+            marginLeft: "6px",
+            fontFamily: "'JetBrains Mono',monospace",
+            fontSize: "0.55rem",
+            color: "#4a5568",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          }}
+        >
+          Junaid_Sahil_Resume.pdf
+        </span>
+      </div>
+
+      {/* Right — download + close */}
+      <div style={{ display: "flex", gap: "6px", alignItems: "center", flexShrink: 0 }}>
+        <a
+          href={`${import.meta.env.VITE_API_URL}/resume/download`}
+          style={{
+            padding: "4px 10px",
+            fontSize: "0.68rem",
+            fontWeight: 600,
+            fontFamily: "'Outfit',sans-serif",
+            background: "#63FFB4",
+            color: "#08080C",
+            borderRadius: "4px",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+          }}
+        >
+          ⬇ Download
+        </a>
+        <button
+          onClick={() => setShowCV(false)}
+          style={{
+            background: "rgba(255,255,255,0.05)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            color: "#8892a4",
+            width: "26px",
+            height: "26px",
+            borderRadius: "6px",
+            cursor: "pointer",
+            fontSize: "0.85rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexShrink: 0,
+          }}
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    {/* PDF iframe */}
+    <iframe
+      src={`https://docs.google.com/viewer?url=${import.meta.env.VITE_API_URL}/resume/view&embedded=true`}
+      style={{
+        flex: 1,
+        width: "100%",
+        border: "none",
+        background: "#fff",
+      }}
+      title="Resume"
+    />
+  </div>
+</div>
             )}
 
             <div style={{ background: "#08080C", minHeight: "100vh", paddingTop: "72px", overflowX: "hidden" }}>
