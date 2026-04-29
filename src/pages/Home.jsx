@@ -38,10 +38,10 @@ const PROJECTS = [
   {
     id: 3,
     num: "003",
-    title: "REST API Boilerplate",
-    desc: "Production-ready Express API with JWT auth, OTP verification, rate limiting & Nodemailer.",
-    tags: ["Express", "PostgreSQL", "JWT", "Nodemailer"],
-    live: "#",
+    title: "Wellness Clinic — Healthcare Platform",
+    desc: "Full healthcare management system with doctor listings, appointment booking, OTP auth, admin dashboard & Cloudinary image uploads.",
+    tags: ["React", "Node.js", "PostgreSQL", "Cloudinary"],
+    live: "https://clinic-frontend-pi.vercel.app",
     github: "https://github.com/sardarjunaidsahil",
   },
 ];
@@ -1121,7 +1121,10 @@ export default function Home() {
                       label: "LinkedIn",
                       href: "https://linkedin.com/in/sardarjunaidsahil",
                     },
-                    { label: "Resume", href: `${import.meta.env.VITE_API_URL}/resume/download` },
+                    {
+                      label: "Resume",
+                      href: `${import.meta.env.VITE_API_URL}/resume/download`,
+                    },
                   ].map(({ label, href }) => (
                     <a
                       key={label}
