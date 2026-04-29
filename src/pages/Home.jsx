@@ -714,10 +714,10 @@ export default function Home() {
           className="hero-section"
           style={{
             position: "relative",
-            minHeight: "100vh",
+            minHeight: "100svh",
             display: "flex",
-            alignItems: "center",
-            paddingTop: "72px",
+            alignItems: "flex-start",
+            paddingTop: "88px",
             overflow: "hidden",
             backgroundImage:
               "linear-gradient(rgba(99,255,180,0.025) 1px,transparent 1px)," +
