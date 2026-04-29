@@ -169,60 +169,120 @@ export default function Navbar() {
         /* MOBILE MENU */
         .nb-overlay {
           position: fixed; inset: 0; z-index: 998;
-          background: rgba(0,0,0,0.65);
-          backdrop-filter: blur(4px);
-          opacity: 0; pointer-events: none;
-          transition: opacity 0.3s;
+          background: rgba(0,0,0,0);
+          pointer-events: none;
+          transition: background 0.4s;
         }
-        .nb-overlay.open { opacity: 1; pointer-events: all; }
+        .nb-overlay.open { background: rgba(0,0,0,0.7); pointer-events: all; }
 
         .nb-mobile {
-          position: fixed; top: 0; right: 0;
-          width: min(300px, 85vw); height: 100vh;
+          position: fixed; top: 0; left: 0; right: 0; bottom: 0;
           z-index: 999;
-          background: #0C0C14;
-          border-left: 1px solid rgba(99,255,180,0.15);
           display: flex; flex-direction: column;
-          padding: 90px 2rem 2.5rem;
-          transform: translateX(100%);
-          transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+          align-items: center; justify-content: center;
+          background: #08080C;
+          pointer-events: none;
+          opacity: 0;
+          transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1);
         }
-        .nb-mobile.open { transform: translateX(0); }
+        .nb-mobile::before {
+          content: '';
+          position: absolute; inset: 0;
+          background: radial-gradient(ellipse at 50% 30%, rgba(99,255,180,0.07) 0%, transparent 65%);
+          pointer-events: none;
+        }
+        .nb-mobile::after {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 1px;
+          background: linear-gradient(to right, transparent, #63FFB4, transparent);
+          opacity: 0.4;
+        }
+        .nb-mobile.open { opacity: 1; pointer-events: all; }
 
         .nb-mobile-list {
           list-style: none; margin: 0; padding: 0;
           display: flex; flex-direction: column;
+          align-items: center; gap: 0;
+          width: 100%;
         }
+
         .nb-mobile-link {
-          display: flex; align-items: center;
-          padding: 11px 0; text-decoration: none;
-          border-bottom: 1px solid rgba(255,255,255,0.06);
-          transition: padding-left 0.2s;
+          display: flex; align-items: center; justify-content: center;
+          gap: 12px;
+          padding: 18px 2rem;
+          text-decoration: none;
+          width: 100%;
+          position: relative;
+          transition: all 0.25s;
         }
-        .nb-mobile-link:hover,
-        .nb-mobile-link.active { padding-left: 10px; }
+        .nb-mobile-link::after {
+          content: '';
+          position: absolute; bottom: 0; left: 50%; right: 50%;
+          height: 1px;
+          background: rgba(99,255,180,0.1);
+          transition: left 0.3s, right 0.3s;
+        }
+        .nb-mobile-link:hover::after,
+        .nb-mobile-link.active::after { left: 2rem; right: 2rem; }
+
+        .nb-mobile-num {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.55rem; color: rgba(99,255,180,0.3);
+          letter-spacing: 0.1em; min-width: 24px;
+          transition: color 0.25s;
+        }
+        .nb-mobile-link:hover .nb-mobile-num,
+        .nb-mobile-link.active .nb-mobile-num { color: #63FFB4; }
 
         .nb-mobile-label {
           font-family: 'Outfit', sans-serif;
-          font-size: 1rem; font-weight: 600;
-          color: ${GRAY}; transition: color 0.2s;
+          font-size: 2rem; font-weight: 800;
+          color: rgba(255,255,255,0.25);
+          letter-spacing: -0.03em;
+          transition: color 0.25s, transform 0.25s;
         }
-        .nb-mobile-link:hover .nb-mobile-label,
-        .nb-mobile-link.active .nb-mobile-label { color: #fff; }
-        .nb-mobile-link.active .nb-mobile-label { color: ${GREEN}; }
+        .nb-mobile-link:hover .nb-mobile-label { color: #fff; transform: translateX(6px); }
+        .nb-mobile-link.active .nb-mobile-label { color: #63FFB4; }
+
+        .nb-mobile-arrow {
+          font-size: 0.9rem; color: transparent;
+          transition: color 0.25s, transform 0.25s;
+          margin-left: 4px;
+        }
+        .nb-mobile-link:hover .nb-mobile-arrow { color: #63FFB4; transform: translateX(4px); }
+        .nb-mobile-link.active .nb-mobile-arrow { color: #63FFB4; }
 
         .nb-mobile-hire {
-          margin-top: auto; display: block;
-          padding: 14px; text-align: center;
+          margin-top: 2.5rem; display: inline-flex;
+          align-items: center; gap: 8px;
+          padding: 14px 36px; text-align: center;
           border: 1px solid ${GREEN}; color: ${GREEN};
           font-family: 'Outfit', sans-serif;
-          font-weight: 600;
-          font-size: 0.95rem; letter-spacing: 0.03em;
-          text-decoration: none;
+          font-weight: 700;
+          font-size: 0.9rem; letter-spacing: 0.08em;
+          text-decoration: none; text-transform: uppercase;
           clip-path: polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
-          transition: background 0.3s, color 0.3s;
+          transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+          position: relative;
         }
-        .nb-mobile-hire:hover { background: ${GREEN}; color: ${DARK}; }
+        .nb-mobile-hire:hover {
+          background: ${GREEN}; color: ${DARK};
+          box-shadow: 0 0 30px rgba(99,255,180,0.3);
+        }
+
+        .nb-mobile-socials {
+          display: flex; gap: 24px; margin-top: 1.5rem;
+        }
+        .nb-mobile-soc {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.6rem; color: rgba(99,255,180,0.3);
+          letter-spacing: 0.1em; text-decoration: none;
+          text-transform: uppercase;
+          transition: color 0.2s;
+        }
+        .nb-mobile-soc:hover { color: #63FFB4; }
 
         /* SCAN LINE */
         .nb-scan {
@@ -243,16 +303,18 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div className={`nb-mobile${menuOpen ? " open" : ""}`}>
         <ul className="nb-mobile-list">
-          {navLinks.map((link) => {
+          {navLinks.map((link, i) => {
             const isActive = location.pathname === link.path;
             return (
-              <li key={link.path}>
+              <li key={link.path} style={{ width: "100%" }}>
                 <Link
                   to={link.path}
                   onClick={() => setMenuOpen(false)}
                   className={`nb-mobile-link${isActive ? " active" : ""}`}
                 >
+                  <span className="nb-mobile-num">0{i + 1}</span>
                   <span className="nb-mobile-label">{link.label}</span>
+                  <span className="nb-mobile-arrow">→</span>
                 </Link>
               </li>
             );
@@ -263,8 +325,26 @@ export default function Navbar() {
           className="nb-mobile-hire"
           onClick={() => setMenuOpen(false)}
         >
-          Hire Me
+          ✦ Hire Me
         </Link>
+        <div className="nb-mobile-socials">
+          <a
+            href="https://github.com/sardarjunaidsahil"
+            target="_blank"
+            rel="noreferrer"
+            className="nb-mobile-soc"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/sardarjunaidsahil"
+            target="_blank"
+            rel="noreferrer"
+            className="nb-mobile-soc"
+          >
+            LinkedIn
+          </a>
+        </div>
       </div>
 
       {/* Navbar */}
