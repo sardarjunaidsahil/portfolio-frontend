@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { path: "/", label: "Home", },
-  { path: "/projects", label: "Projects", },
-  { path: "/skills", label: "Skills", },
-  { path: "/contact", label: "Contact", },
-  { path: "/about", label: "About", },
+  { path: "/", label: "Home" },
+  { path: "/projects", label: "Projects" },
+  { path: "/skills", label: "Skills" },
+  { path: "/contact", label: "Contact" },
+  { path: "/about", label: "About" },
 ];
 
 const GREEN = "#63FFB4";
@@ -24,11 +24,11 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-
-
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [menuOpen]);
 
   return (
@@ -195,7 +195,7 @@ export default function Navbar() {
         }
         .nb-mobile-link {
           display: flex; align-items: center;
-          padding: 15px 0; text-decoration: none;
+          padding: 11px 0; text-decoration: none;
           border-bottom: 1px solid rgba(255,255,255,0.06);
           transition: padding-left 0.2s;
         }
@@ -204,7 +204,7 @@ export default function Navbar() {
 
         .nb-mobile-label {
           font-family: 'Outfit', sans-serif;
-          font-size: 1.3rem; font-weight: 700;
+          font-size: 1rem; font-weight: 600;
           color: ${GRAY}; transition: color 0.2s;
         }
         .nb-mobile-link:hover .nb-mobile-label,
