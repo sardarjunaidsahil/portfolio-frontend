@@ -47,10 +47,10 @@ const PROJECTS = [
 ];
 
 const STATS = [
-  { value: "2", suffix: "+", label: "Years Freelancing" },
-  { value: "2", suffix: "", label: "Live Apps" },
+  { value: "3", suffix: "", label: "Live Projects" },
   { value: "315", suffix: "+", label: "Products (MAUVE)" },
   { value: "100", suffix: "%", label: "Self-Built" },
+  { value: "2023", suffix: "", label: "Building Since" },
 ];
 
 const COLORS = ["#63FFB4", "#79b8ff", "#f97583", "#ffab70", "#c792ea"];
