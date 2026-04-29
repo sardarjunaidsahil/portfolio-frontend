@@ -714,7 +714,6 @@ export default function Home() {
           className="hero-section"
           style={{
             position: "relative",
-            minHeight: "100svh",
             display: "flex",
             alignItems: "flex-start",
             paddingTop: "88px",
