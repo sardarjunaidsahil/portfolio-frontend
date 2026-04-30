@@ -275,6 +275,130 @@ export default function Navbar() {
           transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
           z-index: 0;
         }
+        .nb-mobile-hire:hover::before { transform: translateX(0); }
+        .nb-mobile-hire:hover { color: ${DARK}; }
+        .nb-mobile-hire span { position: relative; z-index: 1; }
+
+        .nb-mobile-footer {
+          opacity: 0; transition: opacity 0.4s 0.55s;
+          margin-top: 1.2rem;
+          display: flex; gap: 20px;
+        }
+        .nb-mobile.open .nb-mobile-footer { opacity: 1; }
+        .nb-mobile-soc {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.58rem; color: rgba(99,255,180,0.3);
+          letter-spacing: 0.1em; text-decoration: none;
+          text-transform: uppercase; transition: color 0.2s;
+        }
+        .nb-mobile-soc:hover { color: #63FFB4; }
+          position: fixed; inset: 0; z-index: 998;
+          background: rgba(0,0,0,0);
+          pointer-events: none;
+          transition: background 0.5s;
+        }
+        .nb-overlay.open { background: rgba(0,0,0,0.6); pointer-events: all; backdrop-filter: blur(6px); }
+
+        .nb-mobile {
+          position: fixed; top: 0; right: 0;
+          width: min(320px, 88vw); height: 100vh;
+          z-index: 999;
+          background: #0A0A12;
+          border-left: 1px solid rgba(99,255,180,0.12);
+          display: flex; flex-direction: column;
+          padding: 100px 2rem 2.5rem;
+          transform: translateX(100%);
+          transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
+          box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+        }
+        .nb-mobile::before {
+          content: '';
+          position: absolute; top: 0; left: 0; right: 0;
+          height: 1px;
+          background: linear-gradient(to right, transparent, rgba(99,255,180,0.4), transparent);
+        }
+        .nb-mobile::after {
+          content: '';
+          position: absolute; bottom: 20%; left: -40%;
+          width: 280px; height: 280px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(99,255,180,0.04) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        .nb-mobile.open { transform: translateX(0); }
+
+        .nb-mobile-list {
+          list-style: none; margin: 0; padding: 0;
+          display: flex; flex-direction: column; gap: 2px;
+        }
+
+        .nb-mobile-item {
+          opacity: 0; transform: translateX(30px);
+          transition: opacity 0.4s, transform 0.4s;
+        }
+        .nb-mobile.open .nb-mobile-item:nth-child(1) { opacity:1; transform:none; transition-delay: 0.15s; }
+        .nb-mobile.open .nb-mobile-item:nth-child(2) { opacity:1; transform:none; transition-delay: 0.22s; }
+        .nb-mobile.open .nb-mobile-item:nth-child(3) { opacity:1; transform:none; transition-delay: 0.29s; }
+        .nb-mobile.open .nb-mobile-item:nth-child(4) { opacity:1; transform:none; transition-delay: 0.36s; }
+        .nb-mobile.open .nb-mobile-item:nth-child(5) { opacity:1; transform:none; transition-delay: 0.43s; }
+
+        .nb-mobile-link {
+          display: flex; align-items: center; gap: 14px;
+          padding: 14px 0;
+          text-decoration: none;
+          border-bottom: 1px solid rgba(255,255,255,0.05);
+          group: true;
+          position: relative; overflow: hidden;
+        }
+
+        .nb-mobile-num {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 0.58rem; color: rgba(99,255,180,0.25);
+          letter-spacing: 0.1em; min-width: 20px;
+          transition: color 0.25s;
+        }
+        .nb-mobile-link:hover .nb-mobile-num,
+        .nb-mobile-link.active .nb-mobile-num { color: #63FFB4; }
+
+        .nb-mobile-label {
+          font-family: 'Outfit', sans-serif;
+          font-size: 1.15rem; font-weight: 600;
+          color: rgba(255,255,255,0.5);
+          letter-spacing: 0.01em;
+          transition: color 0.25s, transform 0.3s cubic-bezier(0.16,1,0.3,1);
+        }
+        .nb-mobile-link:hover .nb-mobile-label { color: #fff; transform: translateX(6px); }
+        .nb-mobile-link.active .nb-mobile-label { color: #63FFB4; }
+
+        .nb-mobile-dot {
+          margin-left: auto;
+          width: 5px; height: 5px; border-radius: 50%;
+          background: #63FFB4;
+          opacity: 0; transform: scale(0);
+          transition: opacity 0.25s, transform 0.25s;
+        }
+        .nb-mobile-link.active .nb-mobile-dot { opacity: 1; transform: scale(1); }
+        .nb-mobile-link:hover .nb-mobile-dot { opacity: 0.4; transform: scale(1); }
+
+        .nb-mobile-hire {
+          margin-top: auto;
+          opacity: 0; transform: translateY(16px);
+          transition: opacity 0.4s 0.5s, transform 0.4s 0.5s;
+          display: block; padding: 14px; text-align: center;
+          border: 1px solid ${GREEN}; color: ${GREEN};
+          font-family: 'Outfit', sans-serif; font-weight: 700;
+          font-size: 0.9rem; letter-spacing: 0.06em;
+          text-decoration: none; text-transform: uppercase;
+          clip-path: polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+          transition: background 0.3s, color 0.3s;
+          position: relative; overflow: hidden;
+        }
+        .nb-mobile.open .nb-mobile-hire { opacity: 1; transform: none; }
+        .nb-mobile-hire::before {
+          content: ''; position: absolute; inset: 0;
+          background: ${GREEN}; transform: translateX(-101%);
+          transition: transform 0.35s cubic-bezier(0.16,1,0.3,1);
+          z-index: 0;
+        }
           position: fixed; inset: 0; z-index: 998;
           background: rgba(0,0,0,0);
           pointer-events: none;
@@ -411,6 +535,30 @@ export default function Navbar() {
       <div className={`nb-mobile${menuOpen ? " open" : ""}`}>
         <ul className="nb-mobile-list">
           {navLinks.map((link, i) => {
+            const isActive = location.pathname === link.path;
+            return (
+              <li key={link.path} className="nb-mobile-item">
+                <Link
+                  to={link.path}
+                  onClick={() => setMenuOpen(false)}
+                  className={`nb-mobile-link${isActive ? " active" : ""}`}
+                >
+                  <span className="nb-mobile-num">0{i + 1}</span>
+                  <span className="nb-mobile-label">{link.label}</span>
+                  <span className="nb-mobile-dot" />
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+        <Link to="/contact" className="nb-mobile-hire" onClick={() => setMenuOpen(false)}>
+          <span>Hire Me</span>
+        </Link>
+        <div className="nb-mobile-footer">
+          <a href="https://github.com/sardarjunaidsahil" target="_blank" rel="noreferrer" className="nb-mobile-soc">GitHub</a>
+          <a href="https://linkedin.com/in/sardarjunaidsahil" target="_blank" rel="noreferrer" className="nb-mobile-soc">LinkedIn</a>
+        </div>
+      </div>
             const isActive = location.pathname === link.path;
             return (
               <li key={link.path} className="nb-mobile-item">
